@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Damp Damp</title>
   <!-- Gothic / Old English-style font -->
   <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
@@ -12,10 +13,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      min-height: 100vh;
       margin: 0;
       text-align: center;
+      padding-top: 50px;
     }
 
     h1 {
@@ -31,21 +33,35 @@
       font-size: 1.8rem;
       color: #39ff14;
       text-shadow: 0 0 10px #39ff14;         /* Subtle glow */
-      margin: 0;
+      margin: 0 0 30px 0;
       text-transform: uppercase;             /* ALL CAPS */
+    }
+
+    #dailyImage {
+      max-width: 80%;
+      max-height: 60%;
+      margin-top: 20px;
+      border: 2px solid #39ff14;
+      box-shadow: 0 0 20px #39ff14;
     }
   </style>
 </head>
 <body>
-  <h1>D A M P   D A M P</h1>
+  <h1>D A M P D A M P</h1>
   <p>TRUST ME</p>
-<img id="dailyImage" src="" alt="Daily Image">
+  <img id="dailyImage" src="" alt="Daily Image">
 
-<script>
-  const imagesFolder = "images/";
-  const imageIndex = 1; // <-- force it to show image 1 immediately
-  const img = document.getElementById("dailyImage");
-  img.src = `${imagesFolder}${imageIndex}.jpg`;
-</script>
+  <script>
+    const totalImages = 9; // Change this to however many images you have
+    const imagesFolder = "images/";
+
+    const today = new Date();
+    const startDate = new Date("2025-10-10"); // optional: pick a fixed start date
+    const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+    const imageIndex = (dayNumber % totalImages) + 1;
+
+    const img = document.getElementById("dailyImage");
+    img.src = `${imagesFolder}${imageIndex}.jpg`;
+  </script>
 </body>
 </html>
