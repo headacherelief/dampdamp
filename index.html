@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Damp Damp</title>
-  <!-- Gothic / Old English-style font -->
-  <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+  <title>I Can Take 2 Million Pictures</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #000;         /* Black background */
-      color: #39ff14;                 /* Neon green */
-      font-family: Helvetica, Arial, sans-serif;
+      background-color: #000;
+      color: #39ff14;
+      font-family: 'VT323', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -17,46 +19,48 @@
       min-height: 100vh;
       margin: 0;
       text-align: center;
-      padding-top: 50px;
+      padding-top: 60px;
     }
 
     h1 {
-      font-family: 'Germania One', cursive;  /* Gothic/Old English style */
-      font-size: 5rem;
-      text-shadow: 0 0 20px #39ff14;         /* Neon glow */
-      letter-spacing: 0.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 1.8rem;
-      color: #39ff14;
-      text-shadow: 0 0 10px #39ff14;         /* Subtle glow */
-      margin: 0 0 30px 0;
-      text-transform: uppercase;             /* ALL CAPS */
+      font-size: 3rem;
+      text-shadow: 0 0 20px #39ff14;
+      letter-spacing: 0.1rem;
+      margin-bottom: 40px;
+      animation: pulse 2s ease-in-out infinite;
     }
 
     #dailyImage {
-      max-width: 80%;
-      max-height: 60%;
-      margin-top: 20px;
-      border: 2px solid #39ff14;
-      box-shadow: 0 0 20px #39ff14;
+      max-width: 85%;
+      max-height: 70vh;
+    }
+
+    @keyframes pulse {
+      0% {
+        text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+        opacity: 1;
+      }
+      50% {
+        text-shadow: 0 0 2px #39ff14, 0 0 8px #39ff14;
+        opacity: 0.8;
+      }
+      100% {
+        text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14;
+        opacity: 1;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>D A M P D A M P</h1>
-  <p>TRUST ME</p>
+  <h1>I can take 2 million pictures.</h1>
   <img id="dailyImage" src="" alt="Daily Image">
 
   <script>
-    const totalImages = 9; // Change this to however many images you have
+    const totalImages = 9; 
     const imagesFolder = "images/";
 
     const today = new Date();
-    const startDate = new Date("2025-10-10"); // optional: pick a fixed start date
+    const startDate = new Date("2025-10-10");
     const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
     const imageIndex = (dayNumber % totalImages) + 1;
 
