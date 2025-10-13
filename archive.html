@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000;
+      color: #39ff14;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      margin: 40px;
+    }
+    a {
+      color: #39ff14;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const totalImages = 9; // change if you add more
+    const imagesFolder = "images/";
+    const today = new Date();
+    const dayNumber = Math.floor(today / (1000 * 60 * 60 * 24));
+    const currentImage = (dayNumber % totalImages) + 1;
+
+    for (let i = 1; i <= currentImage; i++) {
+      const link = document.createElement("a");
+      link.href = `${imagesFolder}${i}.jpg`;
+      link.textContent = `${i}.`;
+      link.target = "_blank"; // opens image in new tab
+      document.body.appendChild(link);
+      document.body.appendChild(document.createTextNode(" "));
+    }
+  </script>
+</body>
+</html>
