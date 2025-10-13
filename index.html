@@ -21,6 +21,8 @@
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
       font-weight: normal;
+      margin: 0;
+      padding: 0;
     }
 
     @keyframes pulse {
@@ -33,7 +35,7 @@
       max-width: 80%;
       height: auto;
       display: block;
-      margin-top: 30px;
+      margin: 0;
       border: none;
     }
 
@@ -41,14 +43,14 @@
       color: #39ff14;
       font-family: 'Courier New', monospace;
       font-size: 11px;
-      text-decoration: underline; /* underlined */
-      margin-top: 20px;
+      text-decoration: underline;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Responsive for phones */
     @media (max-width: 600px) {
       h1 {
-        font-size: 8vw; /* scales with screen width */
+        font-size: 8vw;
       }
       img {
         max-width: 95%;
@@ -61,21 +63,16 @@
 </head>
 <body>
   <h1>I can take 2 million pictures.</h1>
-
   <img id="dailyImage" src="" alt="Daily Image">
-
   <a href="archive.html">yup</a>
 
   <script>
     const totalImages = 16;
     const imagesFolder = "images/";
-
     const startDate = new Date('2025-10-12'); 
     const today = new Date();
-
     const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
     const imageIndex = ((dayNumber - 1) % totalImages) + 1;
-
     const imageElement = document.getElementById("dailyImage");
     imageElement.src = `${imagesFolder}${imageIndex}.jpg`;
   </script>
