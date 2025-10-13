@@ -2,12 +2,11 @@
 <html>
 <head>
   <title>I can take 2 million pictures.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #000;
       color: #39ff14;
-      font-family: 'Orbitron', monospace;
+      font-family: 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -21,6 +20,7 @@
       font-size: 2rem;
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
+      font-weight: normal; /* not bold */
     }
 
     @keyframes pulse {
@@ -53,21 +53,18 @@
 
   <a href="archive.html">yup</a>
 
-    <script>
+  <script>
     const totalImages = 16;
     const imagesFolder = "images/";
 
-    // Choose a fixed start date — this is "Day 1"
     const startDate = new Date('2025-10-12'); 
     const today = new Date();
 
-    // Calculate how many days have passed since startDate
     const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
-
-    // Loop back to 1 after reaching the last image
     const imageIndex = ((dayNumber - 1) % totalImages) + 1;
 
-    // Set the image source
     const imageElement = document.getElementById("dailyImage");
     imageElement.src = `${imagesFolder}${imageIndex}.jpg`;
   </script>
+</body>
+</html>
