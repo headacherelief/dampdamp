@@ -20,7 +20,7 @@
       font-size: 2rem;
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
-      font-weight: normal; /* not bold */
+      font-weight: normal;
     }
 
     @keyframes pulse {
@@ -41,8 +41,21 @@
       color: #39ff14;
       font-family: 'Courier New', monospace;
       font-size: 11px;
-      text-decoration: none;
+      text-decoration: underline; /* underlined */
       margin-top: 20px;
+    }
+
+    /* Responsive for phones */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 8vw; /* scales with screen width */
+      }
+      img {
+        max-width: 95%;
+      }
+      a {
+        font-size: 4vw;
+      }
     }
   </style>
 </head>
