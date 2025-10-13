@@ -9,28 +9,46 @@
       font-family: 'Courier New', monospace;
       font-size: 11px;
       margin: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     a {
       color: #39ff14;
       text-decoration: none;
+      margin: 2px;
+    }
+    .numbers {
+      margin-bottom: 30px;
+    }
+    .home-link {
+      margin-top: auto;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
+  <div class="numbers" id="numbers"></div>
+
+  <a class="home-link" href="index.html">home</a>
+
   <script>
-    const totalImages = 16;
+    const totalImages = 16; // update if you add more images
     const imagesFolder = "images/";
     const today = new Date();
-    const dayNumber = Math.floor(today / (1000 * 60 * 60 * 24));
-    const currentImage = (dayNumber % totalImages) + 1;
+    const startDate = new Date('2025-10-12');
+    const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
+    const currentImage = ((dayNumber - 1) % totalImages) + 1;
+
+    const numbersDiv = document.getElementById("numbers");
 
     for (let i = 1; i <= currentImage; i++) {
       const link = document.createElement("a");
       link.href = `${imagesFolder}${i}.jpg`;
       link.textContent = `${i}.`;
-      link.target = "_blank"; // opens image in new tab
-      document.body.appendChild(link);
-      document.body.appendChild(document.createTextNode(" "));
+      link.target = "_blank";
+      numbersDiv.appendChild(link);
+      numbersDiv.appendChild(document.createTextNode(" "));
     }
   </script>
 </body>
