@@ -14,11 +14,21 @@
       color: #39ff14;
       font-family: 'Courier New', monospace;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+      max-width: 90%;
     }
 
     h1 {
@@ -49,7 +59,7 @@
       font-family: 'Courier New', monospace;
       font-size: 20px;
       text-decoration: underline;
-      margin: 0;
+      margin: 4px 0;
       padding: 0;
     }
 
@@ -59,7 +69,7 @@
       color: #39ff14;
       opacity: 0.6;
       text-align: center;
-      padding: 10px 0;
+      padding-bottom: 10px;
     }
 
     @media (max-width: 600px) {
@@ -76,12 +86,13 @@
   </style>
 </head>
 <body>
-  <h1>I can take 2 million pictures.</h1>
-  <img id="dailyImage" src="" alt="Daily Image">
-  <a href="archive.html">yup</a>
-  <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
-
-  <footer>© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</footer>
+  <div class="container">
+    <h1>I can take 2 million pictures.</h1>
+    <img id="dailyImage" src="" alt="Daily Image">
+    <a href="archive.html">yup</a>
+    <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
+    <footer>© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</footer>
+  </div>
 
   <script>
     const totalImages = 15;
