@@ -21,8 +21,8 @@
       align-items: center;
       justify-content: center;
       padding: 40px;
-      max-width: 90%;
       box-sizing: border-box;
+      width: 90%;
     }
 
     h1 {
@@ -65,17 +65,21 @@
     }
 
     @media (max-width: 600px) {
+      .container {
+        width: 100%;
+        padding: 20px;
+      }
       h1 {
-        font-size: 10vw;
+        font-size: 15vw;
       }
       img {
-        max-width: 95%;
+        max-width: 100%;
       }
       a {
-        font-size: 6vw;
+        font-size: 8vw;
       }
       footer {
-        font-size: 3vw;
+        font-size: 4vw;
       }
     }
   </style>
