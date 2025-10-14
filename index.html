@@ -2,34 +2,27 @@
 <html>
 <head>
   <title>I can take 2 million pictures.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #39ff14;
-      font-family: 'Courier New', monospace;
+      font-family: 'Courier Prime', monospace;
       min-height: 100%;
       text-align: center;
-    }
-
-    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 8vw;
-      line-height: 1;
+      font-weight: normal;
+      font-size: clamp(2rem, 12vw, 5rem);
+      margin: 0;
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
-      font-weight: normal;
-      margin: 0 0 10px 0;
     }
 
     @keyframes pulse {
@@ -39,55 +32,33 @@
     }
 
     img {
-      max-width: 90%;
+      max-width: 80%;
       height: auto;
-      display: block;
-      margin: 0 0 10px 0;
+      margin: 10px 0;
       border: none;
     }
 
     a {
       color: #39ff14;
-      font-family: 'Courier New', monospace;
+      font-family: 'Courier Prime', monospace;
       text-decoration: underline;
-      font-size: 3vw;
-      margin: 4px 0;
-      display: block;
+      font-size: clamp(12px, 4vw, 20px);
+      margin: 5px 0;
     }
 
-    footer {
-      margin-top: 20px;
-      font-size: 3vw;
-      color: #39ff14;
+    .bottom-text {
+      font-size: clamp(8px, 2vw, 12px);
       opacity: 0.6;
-      text-align: center;
-      padding-bottom: 10px;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 15vw;
-      }
-      img {
-        max-width: 95%;
-      }
-      a {
-        font-size: 8vw;
-      }
-      footer {
-        font-size: 4vw;
-      }
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>I can take 2 million pictures.</h1>
-    <img id="dailyImage" src="" alt="Daily Image">
-    <a href="archive.html">yup</a>
-    <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
-    <footer>© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</footer>
-  </div>
+  <h1>I can take 2 million pictures.</h1>
+  <img id="dailyImage" src="" alt="Daily Image">
+  <a href="archive.html">yup</a>
+  <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
+  <div class="bottom-text">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</div>
 
   <script>
     const totalImages = 15;
