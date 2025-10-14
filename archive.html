@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>I can take 2 million pictures.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <title>Archive</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #39ff14;
-      font-family: 'Courier Prime', monospace;
+      font-family: 'Courier New', monospace;
       min-height: 100%;
       text-align: center;
       display: flex;
@@ -17,67 +16,57 @@
       align-items: center;
     }
 
-    h1 {
-      font-weight: 300; /* lighter */
-      font-size: clamp(1.8rem, 7vw, 2.8rem);
-      margin: 0;
-      padding: 5px 0;
-      text-shadow: 0 0 20px #39ff14;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { opacity: 1; }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; }
-    }
-
-    img {
-      max-width: 80%;
-      height: auto;
-      margin: 0;
-      border: none;
-    }
-
-    .links {
+    .container {
       display: flex;
-      gap: 15px;
-      margin-top: 5px;
-      margin-bottom: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      min-height: 100vh;
     }
 
-    a {
+    .numbers a {
       color: #39ff14;
-      font-family: 'Courier Prime', monospace;
       text-decoration: underline;
       font-size: clamp(12px, 3vw, 16px);
+      margin: 2px;
+      display: inline-block;
     }
 
-    .bottom-text {
-      font-size: clamp(8px, 2vw, 12px);
-      opacity: 0.6;
+    .home-link {
+      color: #39ff14;
+      text-decoration: underline;
+      font-size: clamp(12px, 3vw, 16px);
       margin-top: auto;
       margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>I can take 2 million pictures.</h1>
-  <img id="dailyImage" src="" alt="Daily Image">
-  <div class="links">
-    <a href="archive.html">yup</a>
-    <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
+  <div class="container">
+    <div class="numbers" id="numbers"></div>
+    <a class="home-link" href="index.html">sure thing</a>
   </div>
-  <div class="bottom-text">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</div>
 
   <script>
     const totalImages = 15;
     const imagesFolder = "images/";
-    const startDate = new Date('2025-10-12'); 
     const today = new Date();
+    const startDate = new Date('2025-10-12');
     const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
-    const imageIndex = ((dayNumber - 1) % totalImages) + 1;
-    document.getElementById("dailyImage").src = `${imagesFolder}${imageIndex}.jpg`;
+    const currentImage = ((dayNumber - 1) % totalImages) + 1;
+
+    const numbersDiv = document.getElementById("numbers");
+    for (let i = 1; i <= currentImage; i++) {
+      const link = document.createElement("a");
+      link.href = `${imagesFolder}${i}.jpg`;
+      link.textContent = `${i}.`;
+      link.target = "_blank";
+      numbersDiv.appendChild(link);
+      numbersDiv.appendChild(document.createTextNode(" "));
+    }
   </script>
 </body>
 </html>
