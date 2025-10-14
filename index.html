@@ -9,20 +9,22 @@
       padding: 0;
       background-color: #000;
       color: #39ff14;
-      font-family: 'Courier Prime', monospace;
-      min-height: 100%;
-      text-align: center;
+      font-family: 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      text-align: center;
     }
 
     h1 {
-      font-weight: normal;
-      font-size: clamp(2rem, 8vw, 3rem);
-      margin: 0;
+      font-weight: 300;
+      font-size: clamp(14px, 4vw, 18px);
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
+      margin: 0;
+      padding: 0;
     }
 
     @keyframes pulse {
@@ -34,22 +36,23 @@
     img {
       max-width: 80%;
       height: auto;
+      display: block;
       margin: 10px 0;
       border: none;
     }
 
     a {
       color: #39ff14;
-      font-family: 'Courier Prime', monospace;
+      font-family: 'Courier New', monospace;
+      font-size: clamp(14px, 4vw, 18px);
       text-decoration: underline;
-      font-size: clamp(12px, 3vw, 16px);
-      margin: 5px 0;
+      margin: 5px;
     }
 
-    .bottom-text {
-      font-size: clamp(8px, 2vw, 12px);
+    .copyright {
+      margin-top: auto;
+      font-size: clamp(10px, 3vw, 12px);
       opacity: 0.6;
-      margin-top: 20px;
     }
   </style>
 </head>
@@ -58,7 +61,7 @@
   <img id="dailyImage" src="" alt="Daily Image">
   <a href="archive.html">yup</a>
   <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
-  <div class="bottom-text">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</div>
+  <p class="copyright">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</p>
 
   <script>
     const totalImages = 15;
@@ -67,7 +70,8 @@
     const today = new Date();
     const dayNumber = Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
     const imageIndex = ((dayNumber - 1) % totalImages) + 1;
-    document.getElementById("dailyImage").src = `${imagesFolder}${imageIndex}.jpg`;
+    const imageElement = document.getElementById("dailyImage");
+    imageElement.src = `${imagesFolder}${imageIndex}.jpg`;
   </script>
 </body>
 </html>
