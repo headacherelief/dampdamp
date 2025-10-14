@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Archive</title>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       background-color: #000;
       color: #39ff14;
-      font-family: 'Courier New', monospace;
-      font-size: 20px;
-      margin: 40px;
+      font-family: 'Courier Prime', monospace;
+      min-height: 100%;
+      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    a {
-      color: #39ff14;
-      text-decoration: underline; /* underlined */
-      margin: 2px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      min-height: 100vh;
     }
 
-    .numbers {
-      margin-bottom: 30px;
+    .numbers a {
+      color: #39ff14;
+      text-decoration: underline;
+      font-size: clamp(12px, 3vw, 16px);
+      margin: 2px;
+      display: inline-block;
     }
 
     .home-link {
+      color: #39ff14;
+      text-decoration: underline;
+      font-size: clamp(12px, 3vw, 16px);
       margin-top: auto;
       margin-bottom: 10px;
-    }
-
-    /* Responsive for phones */
-    @media (max-width: 600px) {
-      body {
-        font-size: 4vw;
-      }
-      .numbers a {
-        font-size: 4vw;
-      }
-      .home-link {
-        font-size: 4vw;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="numbers" id="numbers"></div>
-
-  <a class="home-link" href="index.html">sure thing</a>
+  <div class="container">
+    <div class="numbers" id="numbers"></div>
+    <a class="home-link" href="index.html">home</a>
+  </div>
 
   <script>
     const totalImages = 15;
@@ -56,7 +59,6 @@
     const currentImage = ((dayNumber - 1) % totalImages) + 1;
 
     const numbersDiv = document.getElementById("numbers");
-
     for (let i = 1; i <= currentImage; i++) {
       const link = document.createElement("a");
       link.href = `${imagesFolder}${i}.jpg`;
