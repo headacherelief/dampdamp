@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>I can take 2 million pictures.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -10,21 +9,30 @@
       background-color: #000;
       color: #39ff14;
       font-family: 'Courier New', monospace;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      min-height: 100vh;
-      text-align: center;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      flex: 1;
     }
 
     h1 {
-      font-weight: 300;
-      font-size: clamp(14px, 4vw, 18px);
+      font-size: clamp(18px, 4vw, 24px);
       text-shadow: 0 0 20px #39ff14;
       animation: pulse 2s infinite;
-      margin: 0;
-      padding: 0;
+      font-weight: normal;
+      margin: 0 0 10px 0;
     }
 
     @keyframes pulse {
@@ -37,31 +45,34 @@
       max-width: 80%;
       height: auto;
       display: block;
-      margin: 10px 0;
+      margin-bottom: 10px;
       border: none;
     }
 
     a {
       color: #39ff14;
-      font-family: 'Courier New', monospace;
-      font-size: clamp(14px, 4vw, 18px);
+      font-size: clamp(14px, 4vw, 20px);
       text-decoration: underline;
       margin: 5px;
     }
 
-    .copyright {
-      margin-top: 40px;
+    .bottom-text {
       font-size: clamp(10px, 3vw, 12px);
       opacity: 0.6;
+      margin-top: auto;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>I can take 2 million pictures.</h1>
-  <img id="dailyImage" src="" alt="Daily Image">
-  <a href="archive.html">yup</a>
-  <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
-  <p class="copyright">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</p>
+  <div class="container">
+    <h1>I can take 2 million pictures.</h1>
+    <img id="dailyImage" src="" alt="Daily Image">
+    <a href="archive.html">yup</a>
+    <a href="mailto:ilikeshootingdice@gmail.com?subject=%244.99">yeah</a>
+  </div>
+
+  <p class="bottom-text">© 2025 DAMPDAMP. All rights reserved. Don't even think about it!</p>
 
   <script>
     const totalImages = 15;
