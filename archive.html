@@ -27,6 +27,9 @@
     .numbers {
       line-height: 2.2;
       margin-bottom: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .numbers a {
@@ -63,7 +66,7 @@
     const currentImage = ((dayNumber - 1) % totalImages) + 1;
 
     const numbersDiv = document.getElementById("numbers");
-    for (let i = 1; i <= currentImage; i++) {
+    for (let i = currentImage; i >= 1; i--) {
       const link = document.createElement("a");
       link.href = `${imagesFolder}${i}.jpg`;
       link.textContent = `${i}.`;
